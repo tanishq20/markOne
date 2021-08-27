@@ -60,7 +60,7 @@ var highestScore = [
     score: 4
   },
   {
-    name: 'Anuj',
+    name: 'Tarun',
     score: 4
   }
 ]
