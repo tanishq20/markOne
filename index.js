@@ -12,16 +12,16 @@ var score = 0;
 function play(question, answer){
   var userAnswer = readlineSync.question(chalk.red(question));
   if(userAnswer.toUpperCase() === answer.toUpperCase()){
-    console.log(chalk.green("Yayy You are Right!!"));
+    console.log(chalk.green(" Yayy You are Right!! "));
     score++;
   }
   else{
-    console.log(chalk.bgRedBright.white("You are wrong!"));
-    console.log(chalk.green("Correct answer is: "+answer));
+    console.log(chalk.bgRedBright.white(" You are wrong! "));
+    // console.log(chalk.green(" Correct answer is: "+answer + " "));
     score--;
   }
 
-  console.log(chalk.white.bold.bgBlue("Your Current Score is: "+ score));
+  console.log(chalk.white.bold.bgBlue("\n Your Current Score is: "+ score + " "));
   console.log("--------------------------------");
 }
 
@@ -38,14 +38,40 @@ var questionThree = {
   answer: "Aspirants"
 }
 var questionFour = {
-  question: "in which month my birthday falls? ",
+  question: "In which month my birthday falls? ",
   answer: "December"
 }
+var questionFive = {
+  question: "My favourite series till date? ",
+  answer: "Money Heist"
+}
 
-var questions = [questionOne, questionTwo, questionThree, questionFour];
+var questions = [questionOne, questionTwo, questionThree, questionFour, questionFive];
 
 for(var i=0; i<questions.length; i++){
   play(questions[i].question, questions[i].answer);
 }
 
-console.log(chalk.red.bold.bgWhite("YAY! You scored: "+score));
+console.log(chalk.red.bold.bgWhite(" YAY! You scored: "+chalk.green.bold(score) + " "));
+
+var highestScore = [
+  {
+    name: 'Swapnil',
+    score: 4
+  },
+  {
+    name: 'Anuj',
+    score: 4
+  }
+]
+
+console.log("--------------------------------");
+
+console.log("Leaderboard:");
+for(var i=0; i<highestScore.length; i++){
+  console.log(highestScore[i].name, highestScore[i].score);
+}
+
+console.log("--------------------------------");
+
+console.log(("If your score is highest then ping me")+chalk.blue.bold(" @tanishq_kumar20 ")+("with score ss😉"));
