@@ -21,7 +21,7 @@ function play(question, answer){
     score--;
   }
 
-  console.log(chalk.white.bold.bgBlue("\n Your Current Score is: "+ score + " "));
+  console.log(chalk.white.bold.bgBlue(`\n Your Current Score is: ${score>0 ? score : score=0} `));
   console.log("--------------------------------");
 }
 
